@@ -1,32 +1,29 @@
 package ar.edu.unlp.info.oo2.biblioteca;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+
 import java.util.List;
 
 public class VoorheesExporter {
 
-	private String exportar(Socio socio) {
-		String separator = System.lineSeparator();
-		return "\t{" + separator
-			+ "\t\t\"nombre\": \"" + socio.getNombre() + "\"," + separator
-			+ "\t\t\"email\": \"" + socio.getEmail() + "\"," + separator
-			+ "\t\t\"legajo\": \"" + socio.getLegajo() + "\"" + separator
-			+ "\t}";
+	private JSONObject jsonObject;
+
+	private JSONArray jsonArray;
+
+	public VoorheesExporter(){
+		jsonObject = new JSONObject();
+		jsonArray = new JSONArray();
+	}
+	private JSONObject exportar(Socio socio) {
+		jsonObject.put("nombre",socio.getNombre());
+		jsonObject.put("email", socio.getEmail());
+		jsonObject.put("legajo", socio.getLegajo());
+		return 	jsonObject;
 	}
 
 	public String exportar(List<Socio> socios) {
-		if (socios.isEmpty()) {
-			return "[]";
-		}
-		String separator = System.lineSeparator();
-		StringBuilder buffer = new StringBuilder("[" + separator);
-		socios.forEach(socio -> {
-			buffer.append(this.exportar(socio))
-				.append(",")
-				.append(separator);
-		});
-		// remueve la última coma y fin de línea
-		buffer.setLength(buffer.length() - (separator.length() + 1));
-		buffer.append(separator).append("]");
-		return buffer.toString();
+		socios.stream().forEach( socio -> jsonArray.add(this.exportar(socio)));
+		return jsonArray.toJSONString();
 	}
 }
