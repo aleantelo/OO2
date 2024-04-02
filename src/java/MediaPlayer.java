@@ -14,7 +14,7 @@ public class MediaPlayer {
     * Es necesario armar este metodo? O lo que realmente importa es la implementacion del adapter
     * *****************************
     */
-    public void ponerPlay(){
+    public void play(){
         media.play();
     }
 }
