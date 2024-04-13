@@ -16,7 +16,7 @@ public class TopografiaTest {
     }
 
     @Test
-    public void topografiaMixtaTest() {
+    public void compositeTopografiaTest() {
         Assertions.assertTrue(topografiaMixta2.equals(topografiaMixta));
     }
 }
