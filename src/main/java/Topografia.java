@@ -10,7 +10,7 @@ public abstract class Topografia {
         return false;
     }
 
-    public boolean igualMixta(Mixta topografiaMixta) {
+    public boolean igualMixta(CompositeTopografia topografiaMixta) {
         return false;
     }
 

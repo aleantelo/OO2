@@ -10,9 +10,9 @@ public class TopografiaTest {
     private Topografia topografiaMixta2;
     @BeforeEach
     public void setUp() {
-        topografiaMixta1 = new Mixta(new Agua(),new Agua(),new Tierra(),new Tierra());
-        topografiaMixta = new Mixta(topografiaMixta1, new Agua(),new Tierra(),new Tierra());
-        topografiaMixta2 = new Mixta(topografiaMixta1, new Agua(),new Tierra(),new Tierra());
+        topografiaMixta1 = new CompositeTopografia(new Agua(),new Agua(),new Tierra(),new Tierra());
+        topografiaMixta = new CompositeTopografia(topografiaMixta1, new Agua(),new Tierra(),new Tierra());
+        topografiaMixta2 = new CompositeTopografia(topografiaMixta1, new Agua(),new Tierra(),new Tierra());
     }
 
     @Test

@@ -1,11 +1,11 @@
 import java.util.Arrays;
 import java.util.List;
 
-public class Mixta extends Topografia {
+public class CompositeTopografia extends Topografia {
 
     private List<Topografia> partes;
 
-    public Mixta(Topografia... topografias) {
+    public CompositeTopografia(Topografia... topografias) {
         partes = Arrays.asList(topografias);
     }
 
@@ -14,7 +14,7 @@ public class Mixta extends Topografia {
         return partes.stream().mapToInt(topografia -> topografia.proporcionDeAgua()).sum() / 4;
     }
 
-    public boolean igualMixta(Mixta otraTopografia) {
+    public boolean igualMixta(CompositeTopografia otraTopografia) {
         //TODO No estoy seguro que este bien.
         return this.partes.equals(otraTopografia.partes);
     }
