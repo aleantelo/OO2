@@ -1,18 +1,30 @@
-public class Topografia {
+public abstract class Topografia {
 
-    public int proporcionDeAgua(){
-        return 0;
-    }
+    public abstract int proporcionDeAgua();
 
-    public boolean igualAgua(){
+    public boolean igualAgua() {
         return false;
     }
 
-    public boolean igualTierra(){
+    public boolean igualTierra() {
         return false;
     }
 
-    public boolean igualMixta(Mixta topografiaMixta){
+    public boolean igualMixta(Mixta topografiaMixta) {
         return false;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if(!(o instanceof Topografia)){
+            return false;
+        }
+        if(this == o){
+            return true;
+        }
+    return this.equals((Topografia) o);
+    }
+
+    public abstract boolean equals(Topografia topografia);
+
 }

@@ -7,7 +7,14 @@ public class Tierra extends Topografia{
         return otraTopografia.igualTierra();
     }
 
+    @Override
+    public int proporcionDeAgua() {
+        return 0;
+    }
+
+    @Override
     public boolean igualTierra(){
         return true;
     }
+
 }
