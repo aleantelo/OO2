@@ -10,9 +10,5 @@ public class Pending extends TodoItemState{
         throw new RuntimeException("No puedo pausarme, estoy pendiente.");
     }
 
-    @Override
-    public void finish(TodoItem todoItem) {
-        System.out.println("Mi estado es Pending, no hago nada en finish");
-    }
 
 }
