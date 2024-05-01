@@ -12,7 +12,7 @@ public class DataBaseRealAccesProxyTest {
     /**
      * SE INSTANCIA ESTA CLASE ( PROXY).... DEBERIA INSTANACIAR DATABASEACCES (INTERFACE) Y ¿AGREGAR EL LOGIN EN DATABASEREALACCES?
      */
-    
+
     private DataBaseRealAccesProxy dataBaseRealAccesProxy;
 
     @BeforeEach
