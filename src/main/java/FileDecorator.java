@@ -1,4 +1,4 @@
-public class FileDecorator implements FileManager{
+public abstract class FileDecorator implements FileManager{
 
 	private FileManager file;
 	
